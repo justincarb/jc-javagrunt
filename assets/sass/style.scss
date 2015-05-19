@@ -1,11 +1,40 @@
+
+@import "compass/css3";
+
 .container{
   min-height:400px;
   width:100%;
   background-color: #999;
   color:#fff;
+  float:left;
 }
 
 .input-container{
   padding:10px;
-  background-color: #f3f3f;
+  background-color:#777;
+  @include border-radius(10px);
+}
+
+a.closebtn{
+  background-color:#8B8B8B;
+  float:right;
+  padding:1px 3px;
+  margin:0px;
+  color:#fff;
+  text-decoration: none;
+}
+
+#input-box{
+  list-style-type: none;
+  li{
+    color: #FFF;
+    background-color: #3A3A3A;
+    padding: 5px;
+    width: 300px;
+    margin: 0px;
+    float: left;
+    clear: both;
+    margin-bottom:10px;
+    @include border-radius(5px);
+  }
 }
