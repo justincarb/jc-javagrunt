@@ -7,17 +7,14 @@ module.exports = function(grunt) {
       css: {
         files: [
           'assets/sass/*.sass',
-          'assets/css/*.scss'
+          'assets/sass/*.scss'
         ],
         tasks: ['compass']
       },
-      js: {
-        files: [
-          'assets/js/*.js',
-          'Gruntfile.js'
-        ],
-        tasks: ['jshint']
-      }
+      scripts: {
+         files: ['assets/js/*.js'],
+         tasks: ['uglify']
+       }
     },
     compass: {
       dist: {
@@ -33,6 +30,18 @@ module.exports = function(grunt) {
         jshintrc: '.jshintrc'
       },
       all: ['Gruntfile.js', 'assets/js/*.js']
+    },
+    uglify: {
+      options: {
+        compress: {
+          drop_console: true
+        }
+      },
+      my_target: {
+        files: {
+          'assets/js/script.min.js': ['assets/js/script.js']
+        }
+      }
     }
   });
 
@@ -40,6 +49,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
 
   // Register the default tasks.
   grunt.registerTask('default', ['watch']);
