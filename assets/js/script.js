@@ -14,5 +14,7 @@ function clearInput(){
 
 function  clickClose(){
   var closeBtn = document.getElementById('close-btn');
-
+  closeBtn.onclick = function(event){
+    event.parentNode.remove();
+  }
  }
