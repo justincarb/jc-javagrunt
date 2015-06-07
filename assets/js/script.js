@@ -1,11 +1,21 @@
+var list = ["Amrit", "Ajimal" , "Ajit"];
+var listL = list.length;
+var names ="";
+var inputDisplay = document.getElementById('input-display');
+var inputBox = document.getElementById('input-box');
+
 function clickme() {
-  var inputDisplay = document.getElementById('input-display');
-  var inputBox = document.getElementById('input-box');
-  inputBox.innerHTML += '<li id="mail-li">' +
-    inputDisplay.value +
-    '<a href="#" id ="close-btn" class="closebtn" onclick = "clickClose()">X</a>' +
-    '</li></br>';
-}
+        if(inputDisplay.value == ''){
+              alert("Put something in the field");
+    }else{
+      list.push(inputDisplay.value);
+      for(var i = 0; i < listL; i++){
+        names += "<li>" + list[i] + "</li></br>";
+        }
+    }
+  }
+
+  inputBox.innerHTML = names;
 
 function clearInput() {
   var inputBox = document.getElementById('input-box');
