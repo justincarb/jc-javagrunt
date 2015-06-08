@@ -1,21 +1,17 @@
-var list = ["Amrit", "Ajimal" , "Ajit"];
+var list = ["Amrit", "Ajimal", "Ajit"];
 var listL = list.length;
 var names ="";
 var inputDisplay = document.getElementById('input-display');
 var inputBox = document.getElementById('input-box');
 
 function clickme() {
-        if(inputDisplay.value == ''){
-              alert("Put something in the field");
-    }else{
-      list.push(inputDisplay.value);
-      for(var i = 0; i < listL; i++){
+        list.push(inputDisplay);
+    }
+
+ for(var i = 0; i < listL; i++){
         names += "<li>" + list[i] + "</li></br>";
         }
-    }
-  }
-
-  inputBox.innerHTML = names;
+inputBox.innerHTML = names ;
 
 function clearInput() {
   var inputBox = document.getElementById('input-box');
