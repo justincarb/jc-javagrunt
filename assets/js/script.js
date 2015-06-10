@@ -2,9 +2,6 @@
 
 var inputBox = document.getElementById('input-box');
 var inputDisplay = document.getElementById('input-display');
-var addText = document.getElementById('add-text');
-var clearInput = document.getElementById('clear-input');
-var delLast = document.getElementById('del-last');
 
 /* Orignal 
 
@@ -99,10 +96,10 @@ function clickme(){
     inputBox.innerHTML += "<li>" + inputDisplay.value + '<a href="#" onclick="close_click(this)" id="closebtn">x</a></li>';
 }
 
-function clearInput(){
+ function clearInput(){
 
     inputBox.innerHTML = "";
-}
+};
 
 function delLast(){
     if( inputBox.innerHTML === "") {
