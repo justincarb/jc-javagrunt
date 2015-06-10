@@ -1,14 +1,18 @@
 
-/*
+
 var inputBox = document.getElementById('input-box');
 var inputDisplay = document.getElementById('input-display');
+var addText = document.getElementById('add-text');
+var clearInput = document.getElementById('clear-input');
+var delLast = document.getElementById('del-last');
 
+/* Orignal 
 
 function clickme(){
   if(inputDisplay.value == ""){
     alert("please put something in the input field.");
   }else
-    inputBox.innerHTML += "<li>" + inputDisplay.value + '<a href="#" id="closebtn">x</a></li>';
+    inputBox.innerHTML += "<li>" + inputDisplay.value + '<a href="#" class="closebtn">x</a></li>';
 }
 
 function clearInput(){
@@ -27,20 +31,15 @@ function delLast(){
 
 }
 
-
-var closeThis = document.getElementById("closebtn");
-closeThis.addEventListener('click' , function(){
-  this.parentNode.remove();
+document.body.addEventListener('click', function(event) {
+  if(event.target.className==='closebtn') {
+    event.target.parentNode.remove();
+  }
 });
 
-*/
-
+Orignal ends/*
 
 /* Answer 1 
-
-var inputBox = document.getElementById('input-box');
-var inputDisplay = document.getElementById('input-display');
-
 
 function clickme() {
   if (inputDisplay.value == "") {
@@ -86,14 +85,11 @@ function delLast() {
 
 
 
- Annswer 1 Ends   */
+ Answer 1 Ends   */
 
 
 
 /* Answer 2 */
-
- var inputBox = document.getElementById('input-box');
-var inputDisplay = document.getElementById('input-display');
 
 
 function clickme(){
@@ -119,14 +115,10 @@ function delLast(){
 
 }
 
-var closeThis = document.getElementById("closebtn");
-closeThis.addEventListener('click' , function(){
-  this.parentNode.remove();
-});
-
 function close_click(elem)
 {
 elem.parentNode.remove();
 }
 
 /* Answer 2  Ends*/
+
